@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const Header = () => {
@@ -30,10 +31,15 @@ const Header = () => {
   }
 
   return (
-    <header className="flex">
-      <h1>Where in the world?</h1>
-      <button onClick={toggleTheme}>
-        <i className="fa-regular fa-moon"></i>
+    <header className="card py-5 shadow flex justify-between">
+      <Link href="/">
+        <h1 className="text-xl font-extrabold">Where in the world?</h1>
+      </Link>
+      <button className="font-semibold text-sm" onClick={toggleTheme}>
+        <i
+          className={
+            "fa-" + (theme === "light" ? "regular" : "solid") + " fa-moon mr-2"
+          }></i>
         {theme === "light" ? "Dark" : "Light"} Mode
       </button>
     </header>

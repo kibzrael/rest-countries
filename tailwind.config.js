@@ -13,7 +13,8 @@ module.exports = {
     extend: {
       colors: {
         "light-bg": "hsl(0, 0%, 98%)",
-        "light-card": "hsl(0, 0%, 52%)",
+        "light-card": "hsl(0, 0%, 100%)",
+        "light-input": "hsl(0, 0%, 52%)",
         "light-text": "hsl(200, 15%, 8%)",
         //
         "dark-bg": "hsl(207, 26%, 17%)",

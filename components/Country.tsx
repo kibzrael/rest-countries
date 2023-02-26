@@ -1,46 +1,62 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export interface Country {
-  name: string;
+  name: { common: string };
   capital: string;
-  flag: string;
+  flags: { svg: string };
   population: number;
   region: string;
   borders: string[];
-  topLevelDomain: string[];
+  tld: string[];
   subregion: string;
   nativeName: string;
-  languages: {
-    iso639_1: string;
-    iso639_2: string;
-    name: string;
-    nativeName: string;
-  }[];
+  cca3: string;
+  languages: { [key: string]: string };
   currencies: {
-    code: string;
-    name: string;
-    symbol: string;
-  }[];
+    [key: string]: {
+      name: string;
+      symbol: string;
+    };
+  };
 }
 
-const CountryComponent = (country: Country) => {
+const CountryComponent = ({ country }: { country: Country }) => {
   return (
-    <article>
-      <Image src={country.flag} alt="Country Flag" />
-      <h2>{country.name}</h2>
-      <p>
-        <span>Population: </span>
-        {country.population}
-      </p>
-      <p>
-        <span>Region: </span>
-        {country.region}
-      </p>
-      <p>
-        <span>Capital: </span>
-        {country.capital}
-      </p>
-    </article>
+    <Link href={`/${country.cca3}`}>
+      <article className="card rounded-md shadow max-w-[300px]">
+        <Image
+          src={country.flags.svg}
+          alt="Country Flag"
+          className="object-fill aspect-[3/2] rounded-t-md"
+          width={300}
+          height={200}
+        />
+        <div className="p-6 text-sm">
+          <h2 className="text-lg font-extrabold mb-4 whitespace-normal">
+            {country.name.common}
+          </h2>
+          <div className="text-light-input my-1">
+            <span className="inline font-semibold text-light-text dark:text-dark-text">
+              Population:{" "}
+            </span>
+            {country.population}
+          </div>
+          <div className="text-light-input my-1">
+            <span className="inline font-semibold text-light-text dark:text-dark-text">
+              Region:{" "}
+            </span>
+            {country.region}
+          </div>
+          <div className="text-light-input my-1">
+            <span className="inline font-semibold text-light-text dark:text-dark-text">
+              Capital:{" "}
+            </span>
+            {country.capital}
+          </div>
+        </div>
+      </article>
+    </Link>
   );
 };
 

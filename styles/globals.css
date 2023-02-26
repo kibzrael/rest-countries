@@ -6,7 +6,26 @@
 
 :root {
   font-family: "Nunito Sans", sans-serif;
+  font-weight: 300;
 }
 
 body {
+  @apply bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text;
+}
+
+.card {
+  @apply bg-light-card dark:bg-dark-card;
+}
+
+header,
+main {
+  @apply px-4 sm:px-[4%] md:px-[6%];
+}
+
+input {
+  @apply bg-transparent;
+}
+
+input:focus {
+  outline: none;
 }
