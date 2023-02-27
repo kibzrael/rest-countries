@@ -1,3 +1,4 @@
+import Loading from "@/components/Loading";
 import Layout from "@/components/Layout";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
@@ -16,6 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
           referrerPolicy="no-referrer"
         />
       </Head>
+      <Loading />
       <Layout>
         <Component {...pageProps} />
       </Layout>

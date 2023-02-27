@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export interface Country {
-  name: { common: string };
+  name: { common: string; official: string };
   capital: string;
   flags: { svg: string };
   population: number;
@@ -10,7 +10,6 @@ export interface Country {
   borders: string[];
   tld: string[];
   subregion: string;
-  nativeName: string;
   cca3: string;
   languages: { [key: string]: string };
   currencies: {

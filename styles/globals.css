@@ -29,3 +29,61 @@ input {
 input:focus {
   outline: none;
 }
+
+.details {
+  @apply text-light-input;
+}
+
+.details > * > * {
+  @apply my-2;
+}
+
+.details .title {
+  @apply font-semibold mr-2 text-light-text dark:text-dark-text;
+}
+
+.hidden {
+  display: none;
+}
+
+.loading-bg {
+  @apply h-1 w-full overflow-hidden;
+}
+
+.loading-indicator {
+  @apply relative h-full w-full;
+}
+
+.loading-indicator:before {
+  content: "";
+  animation: first 1.5s infinite ease-out;
+  @apply bg-blue-500 h-full absolute;
+}
+
+.loading-indicator:after {
+  content: "";
+  animation: second 1.5s infinite ease-in;
+  @apply bg-blue-500 h-full absolute;
+}
+
+@keyframes first {
+  0% {
+    left: -100%;
+    width: 100%;
+  }
+  100% {
+    left: 100%;
+    width: 10%;
+  }
+}
+
+@keyframes second {
+  0% {
+    left: -150%;
+    width: 100%;
+  }
+  100% {
+    left: 100%;
+    width: 10%;
+  }
+}
