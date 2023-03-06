@@ -82,7 +82,7 @@ const CountryPage = ({ country, data }: Props) => {
               <div>
                 <div>
                   <span className="title">Top Level Domain: </span>
-                  {country.tld.map((value, index) => {
+                  {country.tld?.map((value, index) => {
                     return (
                       <span key={index}>
                         {value}
@@ -93,7 +93,7 @@ const CountryPage = ({ country, data }: Props) => {
                 </div>
                 <div>
                   <span className="title">Currencies: </span>
-                  {Object.keys(country.currencies).map((key, index) => {
+                  {Object.keys(country.currencies)?.map((key, index) => {
                     return (
                       <span key={key + index}>
                         {country.currencies[key].name}
@@ -106,7 +106,7 @@ const CountryPage = ({ country, data }: Props) => {
                 </div>
                 <div>
                   <span className="title">Languages: </span>
-                  {Object.keys(country.languages).map((key, index) => {
+                  {Object.keys(country.languages)?.map((key, index) => {
                     return (
                       <span key={key + index}>
                         {country.languages[key]}
@@ -121,7 +121,7 @@ const CountryPage = ({ country, data }: Props) => {
             </div>
             <ul className="flex flex-wrap items-center gap-3 sm:my-12">
               <span className="font-semibold">Border Countries:</span>
-              {country.borders.map((value, index) => {
+              {country.borders?.map((value, index) => {
                 return (
                   <Link key={"border" + index} href={`/${value}`}>
                     <li className="px-6 py-2 card rounded shadow-lg text-xs">

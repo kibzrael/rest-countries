@@ -47,7 +47,7 @@ input:focus {
 }
 
 .loading-bg {
-  @apply h-1 w-full overflow-hidden;
+  @apply h-1 fixed left-0 right-0 top-0 overflow-hidden;
 }
 
 .loading-indicator {
