@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [HERE](https://rest-countries-kibzrael.vercel.app/)
+- Live Site URL: [HERE](https://countries.raelcode.com/)
 
 ## My process
 
